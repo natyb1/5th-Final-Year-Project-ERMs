@@ -1,6 +1,6 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="{{ route('home') }}" class="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="" />
             <span class="d-none d-lg-block text-uppercase">
                 @foreach (auth()->user()->roles as $role)
@@ -12,7 +12,7 @@
     </div>
     <div class="" style="color:#012970 ">
         <h5 class="mt-2 ms-3 fw-bold text-uppercase">
-            {{__('Amhara Industry And Investment Bureau')}}
+            {{ __('Amhara Industry And Investment Bureau') }}
         </h5>
     </div>
     {{-- <div class="search-bar">
@@ -31,17 +31,17 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-bell "></i>
-                        @foreach (Auth::user()->unreadnotifications as $not)
-                            <span class="badge bg-danger badge-number w-4"
-                                style="width
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell "></i>
+                    @foreach (Auth::user()->unreadnotifications as $not)
+                        <span class="badge bg-danger badge-number w-4"
+                            style="width
                             100px">{{ $loop->iteration }}</span>
-                        @endforeach
-                    </a>
+                    @endforeach
+                </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
 
-                        @forelse (Auth::user()->unreadnotifications as $not)
+                    @forelse (Auth::user()->unreadnotifications as $not)
                         @if ($not->type === 'App\Notifications\NewUserNotification')
                             <li>
                                 <hr class="dropdown-divider" />
@@ -49,70 +49,74 @@
                             <li class="notification-item">
                                 <i class="bi bi-check-circle text-success"></i>
                                 <div>
-                                    <p>{{__('New Employee')}}</p>
-                                    <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}</h4>
-                                    <p>{{__('is added')}}</p>
+                                    <p>{{ __('New Employee') }}</p>
+                                    <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}
+                                    </h4>
+                                    <p>{{ __('is added') }}</p>
                                     <a href="{{ route('markasread', $not->id) }}"
-                                        class="text-danger ms-auto markasread ">{{__('Mark as read')}}</a>
+                                        class="text-danger ms-auto markasread ">{{ __('Mark as read') }}</a>
                                 </div>
                             </li>
-                    @elseif ($not->type === 'App\Notifications\AcceptedRequestNotification') 
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li class="notification-item">
-                            <i class="bi bi-check-circle text-success"></i>
-                            <div>
-                                <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}</h4>
-                                <p>{{__('Your request for item')}} {{$not->data['item_name']}}</p>
-                                <p>{{__('Amount')}} {{$not->data['amount']}} {{__('is accepted')}}</p>
-                                <a href="{{ route('markasread', $not->id) }}"
-                                    class="text-danger ms-auto markasread ">{{__('Mark as read')}}</a>
-                            </div>
-                        </li>
-                    @elseif ($not->type === 'App\Notifications\ItemRequestNotificaton') 
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li class="notification-item">
-                            <i class="bi bi-check-circle text-success"></i>
-                            <div>
-                                <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}</h4>
-                                    <p>{{__('Requested an item')}}</p>
-                                <a href="{{ route('markasread', $not->id) }}"
-                                    class="text-danger ms-auto markasread ">{{__('Mark as read')}}</a>
-                            </div>
-                        </li>
-                    @elseif ($not->type === 'App\Notifications\DeclinedRequestNotification') 
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li class="notification-item">
-                            <i class="bi bi-check-circle text-success"></i>
-                            <div>
-                                <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}</h4>
-                                <p>{{__('Your request for item')}} {{$not->data['item_name']}}</p>
-                                <p>{{__('Amount')}} {{$not->data['amount']}} {{__('is declined')}}</p>
-                                <a href="{{ route('markasread', $not->id) }}"
-                                    class="text-danger ms-auto markasread ">{{__('Mark as read')}}</a>
-                            </div>
-                        </li>
-                        @endif
-
-                        @empty
+                        @elseif ($not->type === 'App\Notifications\AcceptedRequestNotification')
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
                             <li class="notification-item">
                                 <i class="bi bi-check-circle text-success"></i>
                                 <div>
-                                    <p>{{__('No record found')}}</p>
+                                    <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}
+                                    </h4>
+                                    <p>{{ __('Your request for item') }} {{ $not->data['item_name'] }}</p>
+                                    <p>{{ __('Amount') }} {{ $not->data['amount'] }} {{ __('is accepted') }}</p>
+                                    <a href="{{ route('markasread', $not->id) }}"
+                                        class="text-danger ms-auto markasread ">{{ __('Mark as read') }}</a>
                                 </div>
                             </li>
-                        @endforelse
+                        @elseif ($not->type === 'App\Notifications\ItemRequestNotificaton')
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li class="notification-item">
+                                <i class="bi bi-check-circle text-success"></i>
+                                <div>
+                                    <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}
+                                    </h4>
+                                    <p>{{ __('Requested an item') }}</p>
+                                    <a href="{{ route('markasread', $not->id) }}"
+                                        class="text-danger ms-auto markasread ">{{ __('Mark as read') }}</a>
+                                </div>
+                            </li>
+                        @elseif ($not->type === 'App\Notifications\DeclinedRequestNotification')
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li class="notification-item">
+                                <i class="bi bi-check-circle text-success"></i>
+                                <div>
+                                    <h4>{{ $not->data['name'] }} {{ $not->data['mname'] }} {{ $not->data['lname'] }}
+                                    </h4>
+                                    <p>{{ __('Your request for item') }} {{ $not->data['item_name'] }}</p>
+                                    <p>{{ __('Amount') }} {{ $not->data['amount'] }} {{ __('is declined') }}</p>
+                                    <a href="{{ route('markasread', $not->id) }}"
+                                        class="text-danger ms-auto markasread ">{{ __('Mark as read') }}</a>
+                                </div>
+                            </li>
+                        @endif
+
+                    @empty
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <p>{{ __('No record found') }}</p>
+                            </div>
+                        </li>
+                    @endforelse
                 </ul>
             </li>
-           
+
             {{-- @role('HR officer')
             <li class="nav-item dropdown">
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -187,7 +191,7 @@
                     </li>
                     <li>
                         <a href="{{ route('viewProfile') }}" class="dropdown-item d-flex align-items-center">
-                            <i class="bi bi-person"></i> <span>{{__('My Profile')}}</span>
+                            <i class="bi bi-person"></i> <span>{{ __('My Profile') }}</span>
                         </a>
                     </li>
                     <li>
@@ -195,7 +199,7 @@
                     </li>
                     <li>
                         <a href="{{ route('settings.index') }}" class="dropdown-item d-flex align-items-center">
-                            <i class="bi bi-gear"></i> <span>{{__('Change Password')}}</span>
+                            <i class="bi bi-gear"></i> <span>{{ __('Change Password') }}</span>
                         </a>
                     </li>
                     <li>
@@ -213,7 +217,7 @@
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button class="dropdown-item text-danger">
-                                <i class="ri-shut-down-line align-middle me-1 text-danger"></i> {{__('Logout')}}
+                                <i class="ri-shut-down-line align-middle me-1 text-danger"></i> {{ __('Logout') }}
                             </button>
 
                         </form>

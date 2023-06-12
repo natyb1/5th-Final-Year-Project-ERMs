@@ -76,7 +76,8 @@
                                         <i class="fa-solid fa-location-dot text-primary "></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                                        <p><span>Address:</span> ethiopia, amhara provision, Bahir Dar, Ethiopia
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +87,7 @@
                                         <i class="fa-solid fa-phone text-primary"></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>Phone:</span> <a href="tel://1234567920">+251 94532 342 938</a></p>
+                                        <p><span>Phone:</span> <a href="tel://+251 58 220 1454">+251 58 220 1454</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +97,9 @@
                                         <i class="fa-solid fa-envelope text-primary"></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                                        <p><span>Email:</span> <a
+                                                href="mailto:investamhara@gmail.com">investamhara@gmail.com</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +109,7 @@
                                         <i class="fa-solid fa-fax text-primary"></i>
                                     </div>
                                     <div class="text">
-                                        <p><span>Fax</span> <a href="#">yoursite.com</a></p>
+                                        <p><span>Fax:</span> 986589</p>
                                     </div>
                                 </div>
                             </div>

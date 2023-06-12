@@ -54,12 +54,12 @@
                                                         data-bs-toggle="dropdown" aria-expanded="false">
                                                     </button>
                                                     <ul class="dropdown-menu text-center ">
-                                                  
-                                                            <li>
-                                                                <a class="text-primary" href=""data-bs-toggle="modal"
-                                                                    data-bs-target="#addnew{{ $test->item_id }}">{{ __('Requset') }}</a>
-                                                            </li>
-                                                
+
+                                                        <li>
+                                                            <a class="text-primary" href=""data-bs-toggle="modal"
+                                                                data-bs-target="#addnew{{ $test->item_id }}">{{ __('Requset') }}</a>
+                                                        </li>
+
                                                     </ul>
                                                 </div>
 
@@ -73,7 +73,8 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
 
-                                                        <h5 class="modal-title" id="exampleModalLabel">{{__('Request Item')}}</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            {{ __('Request Item') }}</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
@@ -83,8 +84,10 @@
                                                             {{ csrf_field() }}
                                                             <div class="row mb-3">
                                                                 <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label for="item_id" class="form-label">{{__('Item Status')}}</label>
-                                                                    <input type="text" value="{{ $test->item_status }} "
+                                                                    <label for="item_id"
+                                                                        class="form-label">{{ __('Item Status') }}</label>
+                                                                    <input readonly type="text"
+                                                                        value="{{ $test->item_status }} "
                                                                         class="form-control px-3 @error('item_status') is-invalid @enderror"
                                                                         id="item_status" name="item_status">
 
@@ -95,8 +98,10 @@
                                                                     @enderror
                                                                 </div>
                                                                 <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label for="item_name" class="form-label">{{__('Item Name')}}</label>
-                                                                    <input type="text" value="{{ $test->item_name }}   "
+                                                                    <label for="item_name"
+                                                                        class="form-label">{{ __('Item Name') }}</label>
+                                                                    <input readonly type="text"
+                                                                        value="{{ $test->item_name }}   "
                                                                         class="form-control px-3 @error('item_name') is-invalid @enderror"
                                                                         id="item_name" name="item_name">
 
@@ -107,9 +112,10 @@
                                                                     @enderror
                                                                 </div>
                                                                 <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label for="measurment" class="form-label">{{__('Measurement')}}
+                                                                    <label for="measurment"
+                                                                        class="form-label">{{ __('Measurement') }}
                                                                     </label>
-                                                                    <input type="text"
+                                                                    <input readonly type="text"
                                                                         class="form-control px-3 @error('item_measurement') is-invalid @enderror"
                                                                         id="item_measurement"
                                                                         value=" {{ $test->item_measurement }} "
@@ -123,91 +129,98 @@
                                                                 </div>
                                                                 <div class="row mb-3">
                                                                     <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                        <label class="form-label">{{__('Item Type')}}</label>
-                                                                        <input type="text" value="{{ $test->equ_type }}"
+                                                                        <label
+                                                                            class="form-label">{{ __('Item Type') }}</label>
+                                                                        <input readonly type="text"
+                                                                            value="{{ $test->equ_type }}"
                                                                             class="form-control px-3 @error('name') is-invalid @enderror"
                                                                             name="name">
-                                                                            <input type="hidden" value="{{ $test->type_id_fk }}"
+                                                                        <input readonly type="hidden"
+                                                                            value="{{ $test->type_id_fk }}"
                                                                             class="form-control px-3 @error('r_type_id_fk') is-invalid @enderror"
                                                                             name="r_type_id_fk">
-    
+
                                                                         @error('r_type_id_fk')
                                                                             <span class="invalid-feedback">
                                                                                 {{ $message }}
                                                                             </span>
                                                                         @enderror
                                                                     </div>
-                                                                <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label for="description" class="form-label">{{__('Description')}}
-                                                                    </label>
-                                                                    <input type="text"
-                                                                        value=" {{ $test->item_description }} "class="form-control px-3 @error('item_description') is-invalid @enderror"
-                                                                        id="item_description" name="item_description">
+                                                                    <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
+                                                                        <label for="description"
+                                                                            class="form-label">{{ __('Description') }}
+                                                                        </label>
+                                                                        <input readonly type="text"
+                                                                            value=" {{ $test->item_description }} "class="form-control px-3 @error('item_description') is-invalid @enderror"
+                                                                            id="item_description" name="item_description">
 
-                                                                    @error('item_description')
-                                                                        <span class="invalid-feedback">
-                                                                            {{ $message }}
-                                                                        </span>
-                                                                    @enderror
+                                                                        @error('item_description')
+                                                                            <span class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </span>
+                                                                        @enderror
+                                                                    </div>
+
                                                                 </div>
-                                                                
+
+                                                                <div class="row mb-3">
+                                                                    <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
+                                                                        <label
+                                                                            class="form-label">{{ __('Available In Stock') }}</label>
+                                                                        <input readonly type="number"
+                                                                            value="{{ $test->in_stock }}"
+                                                                            class="form-control px-3 @error('in_stock') is-invalid @enderror"
+                                                                            name="in_stock">
+
+                                                                        @error('in_stock')
+                                                                            <span class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </span>
+                                                                        @enderror
+                                                                    </div>
+
+                                                                    <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
+                                                                        <label for="item_amount"
+                                                                            class="form-label">{{ __('Amount') }}</label>
+                                                                        <input type="number"
+                                                                            class="form-control px-3 @error('item_amount') is-invalid @enderror"
+                                                                            id="item_amount" name="item_amount">
+
+                                                                        @error('item_amount')
+                                                                            <span class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </span>
+                                                                        @enderror
+                                                                    </div>
+                                                                    <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
+                                                                        <label for="reason"
+                                                                            class="form-label">{{ __('Reason') }}</label>
+                                                                        <input type="text"
+                                                                            class="form-control px-3 @error('reason') is-invalid @enderror  "
+                                                                            id="reason" name="reason">
+
+                                                                        @error('reason')
+                                                                            <span class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </span>
+                                                                        @enderror
+                                                                    </div>
+
+                                                                </div>
+
                                                             </div>
-
-                                                            <div class="row mb-3">
-                                                                <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label class="form-label">{{__('Available In Stock')}}</label>
-                                                                    <input type="number" value="{{ $test->in_stock }}"
-                                                                        class="form-control px-3 @error('in_stock') is-invalid @enderror"
-                                                                        name="in_stock">
-
-                                                                    @error('in_stock')
-                                                                        <span class="invalid-feedback">
-                                                                            {{ $message }}
-                                                                        </span>
-                                                                    @enderror
-                                                                </div>
-                                                               
-                                                                <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label for="item_amount"
-                                                                        class="form-label">{{__('Amount')}}</label>
-                                                                    <input type="number"
-                                                                        class="form-control px-3 @error('item_amount') is-invalid @enderror"
-                                                                        id="item_amount" name="item_amount">
-
-                                                                    @error('item_amount')
-                                                                        <span class="invalid-feedback">
-                                                                            {{ $message }}
-                                                                        </span>
-                                                                    @enderror
-                                                                </div>
-                                                                <div class="col-sm-12 col-md-4 col-lg-4 mb-3">
-                                                                    <label for="reason"
-                                                                        class="form-label">{{__('Reason')}}</label>
-                                                                    <input type="text"
-                                                                        class="form-control px-3 @error('reason') is-invalid @enderror  "
-                                                                        id="reason" name="reason">
-
-                                                                    @error('reason')
-                                                                        <span class="invalid-feedback">
-                                                                            {{ $message }}
-                                                                        </span>
-                                                                    @enderror
-                                                                </div>
-
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal"><i
+                                                                        class="bi bi-x-circle-fill"></i>
+                                                                    {{ __('Close') }}</button>
+                                                                <button type="submit" class="btn btn-primary"><i
+                                                                        class="bi bi-send"></i>{{ __('Submit') }}</button>
                                                             </div>
-
+                                                        </form>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i>
-                                                            {{__('Close')}}</button>
-                                                        <button type="submit" class="btn btn-primary"><i
-                                                                class="bi bi-send"></i>{{__('Submit')}}</button>
-                                                    </div>
-                                                    </form>
                                                 </div>
                                             </div>
-                                        </div>
                                     @endforeach
 
                                 </tbody>

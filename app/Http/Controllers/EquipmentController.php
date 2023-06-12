@@ -67,10 +67,10 @@ class EquipmentController extends Controller
 public function req_store(Request $request, String $id)  {
 
     $validator=$request->validate([
-            'item_name' => 'required|max:255',
-            'item_description' => 'required|max:255',
-            'item_measurement' => 'required|max:255',
-            'in_stock' => 'required',
+            // 'item_name' => 'required|max:255',
+            // 'item_description' => 'required|max:255',
+            // 'item_measurement' => 'required|max:255',
+            // 'in_stock' => 'required',
             'item_amount' => ['required', 'numeric', 'min:1', 'lte:in_stock'],
             'reason' => 'required',
         ], [

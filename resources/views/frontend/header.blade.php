@@ -6,7 +6,7 @@
 <div class="header d-flex justify-content-between">
     <div class="left-items">
         <span class="item">Amhara Industry And Investment Bureau </span>
-        <span class="item"><i class="fa-sharp fa-solid fa-phone-flip"></i>+251-97853-28372</span>
+        <span class="item"><i class="fa-sharp fa-solid fa-phone-flip"></i>+251 58 220 1454</span>
     </div>
     <div class="right-items  ">
         {{-- <span class="item"><i class="fa-brands fa-facebook  icons"></i></span> --}}

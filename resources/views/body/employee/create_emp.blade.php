@@ -52,7 +52,8 @@
                                             @enderror
                                         </div>
                                         <div class="col-12 col-md-6  mb-3">
-                                            <label for="middle_name" class=" col-form-label">{{ __('Middle Name') }}</label>
+                                            <label for="middle_name"
+                                                class=" col-form-label">{{ __('Middle Name') }}</label>
                                             <input name="middle_name" value="{{ old('middle_name') }}"
                                                 class="form-control  @error('middle_name') is-invalid @enderror"
                                                 type="text" placeholder="Middle Name"> @error('middle_name')
@@ -72,7 +73,7 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                        
+
                                         {{-- department and job --}}
                                         <div class="col-12 col-md-6  mb-3">
                                             <label for="department" class="col-form-label">{{ __('Department') }}</label>
@@ -276,7 +277,7 @@
                                         <div class="col-12 col-md-6  mb-3 ">
                                             <label for="num_of_children"
                                                 class=" col-form-label">{{ __('Number of
-                                                                                                Children') }}</label>
+                                                                                                                                                                                                Children') }}</label>
                                             <input name="num_of_children" value="{{ old('num_of_children') }}"
                                                 class="form-control  @error('num_of_children') is-invalid @enderror"
                                                 type="number" placeholder="Number Of Children">
@@ -389,7 +390,7 @@
                                                 class=" col-form-label">{{ __('Period of Service') }}</label>
                                             <input name="period_of_service" value="{{ old('period_of_service') }}"
                                                 class="form-control  @error('period_of_service') is-invalid @enderror"
-                                                type="text" placeholder="">
+                                                type="number" placeholder="">
                                             @error('period_of_service')
                                                 <span class="invalid-feedback">
                                                     {{ $message }}
@@ -401,7 +402,7 @@
                                                 class=" col-form-label">{{ __('Relevant Experience') }}</label>
                                             <input name="relevant_experience" value="{{ old('relevant_experience') }}"
                                                 class="form-control  @error('relevant_experience') is-invalid @enderror"
-                                                type="text" placeholder="">
+                                                type="number" placeholder="">
                                             @error('relevant_experience')
                                                 <span class="invalid-feedback">
                                                     {{ $message }}
@@ -428,8 +429,8 @@
                                         <div class="col-12 col-md-6  mb-3 ">
                                             <label for="co_email" class=" col-form-label">{{ __('Email') }}</label>
                                             <input name="co_email" value="{{ old('co_email') }}"
-                                                class="form-control  @error('co_email') is-invalid @enderror" type="text"
-                                                placeholder="">
+                                                class="form-control  @error('co_email') is-invalid @enderror"
+                                                type="text" placeholder="">
                                             @error('co_email')
                                                 <span class="invalid-feedback">
                                                     {{ $message }}

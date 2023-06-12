@@ -5,11 +5,11 @@
             <div class="clock  positon-relative">
                 <div class="digital-clock">00:00:00</div>
             </div>
-            <h1>{{__('Dashboard')}}</h1>
+            <h1>{{ __('Dashboard') }}</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="">{{__('Home')}}</a></li>
-                    <li class="breadcrumb-item active">{{__('Dashboard')}}</li>
+                    <li class="breadcrumb-item"><a href="">{{ __('Home') }}</a></li>
+                    <li class="breadcrumb-item active">{{ __('Dashboard') }}</li>
                 </ol>
 
             </nav>
@@ -23,7 +23,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{__('Male Employees')}} </h5>
+                                    <h5 class="card-title">{{ __('Male Employees') }} </h5>
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -31,14 +31,9 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>{{ $male }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">12%</span>
-                                            <span class="text-muted small pt-2 ps-1">increase</span>
 
                                         </div>
 
-                                        <div class="">
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +41,7 @@
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{__('Female Employees')}} </h5>
+                                    <h5 class="card-title">{{ __('Female Employees') }} </h5>
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -54,8 +49,6 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>{{ $female }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">12%</span>
-                                            <span class="text-muted small pt-2 ps-1">increase</span>
                                         </div>
                                     </div>
                                 </div>
@@ -64,16 +57,14 @@
                         <div class="col-xxl-4 col-md-4">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{__('Permanent')}} <br>{{__('Items')}}</h5>
+                                    <h5 class="card-title">{{ __('Permanent') }} <br>{{ __('Items') }}</h5>
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="fa-solid fa-desktop"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{ $female }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">12%</span>
-                                            <span class="text-muted small pt-2 ps-1">increase</span>
+                                            <h6>{{ $fixed }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -82,16 +73,15 @@
                         <div class="col-xxl-4 col-md-4">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{__('Limited')}} <br> {{__('Items')}} </h5>
+                                    <h5 class="card-title">{{ __('Limited') }} <br> {{ __('Items') }} </h5>
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="fa-solid fa-soap"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{ $female }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">12%</span>
-                                            <span class="text-muted small pt-2 ps-1">increase</span>
+                                            <h6>{{ $limited }}</h6>
+
                                         </div>
                                     </div>
                                 </div>
@@ -100,16 +90,15 @@
                         <div class="col-xxl-4 col-md-4">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{__('Total')}} <br> {{__('Items')}}</h5>
+                                    <h5 class="card-title">{{ __('Total') }} <br> {{ __('Items') }}</h5>
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="fa-solid fa-cart-shopping"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{ $female }}</h6>
-                                            <span class="text-success small pt-1 fw-bold">12%</span>
-                                            <span class="text-muted small pt-2 ps-1">increase</span>
+                                            <h6>{{ $total_equip }}</h6>
+
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +141,8 @@
                 <div class="col-lg-4">
                     <div class="card-body pb-0">
                         <h5 class="card-title">
-                            {{ __('Anouncement') }} {{__('&')}} {{ __('News') }}
+                            {{ __('Anouncement') }} {{ __('&') }} {{ __('News') }}
+                            <hr>
                         </h5>
 
                         <div class="news  mb-4">
@@ -162,7 +152,7 @@
                                     <div class="position-absolute recently-updated">
                                         @if ($post->updated_at >= now()->subDays(1))
                                             <span class="badge rounded-pill bg-success">
-                                                {{__('new')}}
+                                                {{ __('new') }}
                                             </span>
                                         @endif
                                     </div>

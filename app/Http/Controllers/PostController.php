@@ -8,15 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+   
     function __construct()
     {
-        $this->middleware('role_or_permission:personal_information access|Employee detail|Employee create|Employee edit|Employee delete', ['only' => ['index','show']]);
-        $this->middleware('role_or_permission:Employee create', ['only' => ['create','store']]);
-        $this->middleware('role_or_permission:Employee edit', ['only' => ['edit','update']]);
-        $this->middleware('role_or_permission:Employee delete', ['only' => ['destroy']]);
+        $this->middleware('role_or_permission:Post access|Post create|Post view', ['only' => ['index','show']]);
+        $this->middleware('role_or_permission:Post create', ['only' => ['create','store']]);
+        $this->middleware('role_or_permission:Post view', ['only' => ['view','show']]);
     }
+
+
     public function index()
     {
+        
         return view("body.post.create_post");
     }
     public function create()
